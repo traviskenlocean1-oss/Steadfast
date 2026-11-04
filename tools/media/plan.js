@@ -22,19 +22,25 @@ const DIRECTOR = { 'dylan-bradshaw': 'marcus-hale', 'jacob-frost': 'dre-collins'
 const PORTRAIT_NAME = [[/Dylan/i, 'marcus-hale'], [/Brian/i, 'nia-brooks'], [/Jacob/i, 'dre-collins'], [/3E98915F|Jack/i, 'sam-kessler']];
 
 // source stills with orientation
-const srcFile = s => path.join(STOCK, s[0] === 'v' ? 'posters' : 'photos', s + '.jpg');
+const srcFile = s => path.join(STOCK, { v: 'posters', p: 'photos', m: 'frames' }[s[0]], s + '.jpg');
 const dimsOf = {};
 const dim = s => dimsOf[s] || (dimsOf[s] = execFileSync('magick', ['identify', '-format', '%w %h', srcFile(s)]).toString().split(' ').map(Number));
 const all = [...fs.readdirSync(path.join(STOCK, 'posters')).map(f => f.replace('.jpg', '')).filter(s => !['v084', 'v029'].includes(s)), ...fs.readdirSync(path.join(STOCK, 'photos')).map(f => f.replace('.jpg', ''))];
 const inSeries = new Set(Object.entries(series).filter(([k]) => k[0] !== '_').flatMap(([, v]) => v));
 const pools = { general: all.filter(s => !inSeries.has(s)) };
 for (const [k, v] of Object.entries(series)) if (k[0] !== '_') pools[k] = v.filter(s => fs.existsSync(srcFile(s)));
+// stills pulled from each program's own Mixkit clips (tools/media/frames.json) come after its Pexels stills
+const FRAMES = fs.existsSync(path.join(__dirname, 'frames.json')) ? JSON.parse(fs.readFileSync(path.join(__dirname, 'frames.json'), 'utf8')) : {};
+for (const [k, v] of Object.entries(FRAMES)) pools[k] = [...(pools[k] || []), ...v.filter(s => fs.existsSync(srcFile(s)))];
 
 function roleOf(it) {
   const pages = it.uses.map(u => u.page);
   if (it.uses.some(u => u.sec === 'home-gallery_wrap')) return 'polaroid';
   const pn = PORTRAIT_NAME.find(([re]) => re.test(it.file));
   if (pn) return 'coach:' + pn[1];
+  // a program's own page (not its preview in another page's "next project" / list) decides whose shoot it is
+  const own = it.uses.find(u => /^works\//.test(u.page) && !/^(next-project|work-list)_wrap$/.test(u.sec));
+  if (own && WORK[own.page.slice(6)]) return WORK[own.page.slice(6)];
   const w = pages.map(p => p.match(/^works\/(.+)$/)).find(Boolean);
   if (w && WORK[w[1]]) return WORK[w[1]];
   const d = pages.map(p => p.match(/^directors\/(.+)$/)).find(Boolean);

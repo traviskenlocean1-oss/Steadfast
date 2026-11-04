@@ -11,7 +11,7 @@ const escRe = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 // ---------- routes: Paragon path -> Steadfast path ----------
 const SLUGS = {
-  directors: { 'dylan-bradshaw': 'marcus-hale', 'jacob-frost': 'dre-collins', 'jack-linderman': 'sam-kessler', 'brian-myers': 'nia-brooks' },
+  directors: { 'dylan-bradshaw': 'marcus-holloway', 'jacob-frost': 'dre-collins', 'jack-linderman': 'sam-whitfield', 'brian-myers': 'nia-brooks' },
   works: {
     'bake-it-till-you-make-it': 'barbell-club', 'closer-to-home': 'strength-foundations', 'doing-great-things-together': 'team-conditioning',
     'electric-ideas': 'engine-builder', 'i-am-ready-karts-to-cars': 'athlete-performance', 'playing-in-the-dark': '5am-club',
@@ -103,6 +103,14 @@ function swapMedia(h) {
   // anything else (inline styles, meta, data attributes, link icons)
   return h.replace(CDN_IMG, (u, id) => (MEDIA[id] ? MEDIA[id].src : (missingMedia.add(id), u)));
 }
+// videos: Paragon's Vimeo files -> Mixkit clips (tools/media/videos.js); the lightbox's Vimeo iframe -> <video> + assets/js/vimeo-shim.js
+const VIDEOS = JSON.parse(fs.readFileSync(path.join(__dirname, 'media/video-map.json'), 'utf8'));
+const missingVideo = new Set();
+const swapVideos = h => h
+  .replace(/https:\/\/player\.vimeo\.com\/progressive_redirect\/playback\/(\d+)\/[^"'\s<>]*/g, (u, id) => VIDEOS[id] || (missingVideo.add(id), u))
+  .replace(/<iframe src="" [^>]*class="vimeo-lightbox__iframe"[^>]*><\/iframe>/g, '<video playsinline loop class="vimeo-lightbox__iframe" style="object-fit:contain;background:#000"></video>')
+  .replace(/`https:\/\/player\.vimeo\.com\/video\/\$\{[^}]+\}\?autoplay=1&muted=0`/g, 'videoSrc')
+  .replace(/<script src="\/assets\/js\/player\.js"><\/script>/g, `<script src="${JS_DIR}vimeo-shim.js"></script>`);
 // inline brand SVGs: keep Paragon's <svg> tag, swap the drawing
 const { SVGS } = require('./brand/svgs.js');
 const swapSvgs = h => h.replace(/(<svg[^>]*viewBox="([^"]+)"[^>]*>)[\s\S]*?<\/svg>/g, (m, open, vb) => (SVGS[vb] ? open + SVGS[vb] + '</svg>' : m));
@@ -148,8 +156,8 @@ const ROLE_ALT = {
   'strength-foundations': 'Beginners learning the basic lifts in Strength Foundations',
   'engine-builder': 'Outdoor conditioning intervals in the Engine Builder program',
   'lift-for-life': 'Members lifting together at the Lift for Life charity day',
-  'coach-marcus-hale': 'Coach Marcus Hale on the Steadfast floor', 'coach-dre-collins': 'Coach Dre Collins coaching a session',
-  'coach-sam-kessler': 'Coach Sam Kessler in the Steadfast gym', 'coach-nia-brooks': 'Coach Nia Brooks leading a mobility session',
+  'coach-marcus-hale': 'Coach Marcus Holloway on the Steadfast floor', 'coach-dre-collins': 'Coach Dre Collins coaching a session',
+  'coach-sam-kessler': 'Coach Sam Whitfield in the Steadfast gym', 'coach-nia-brooks': 'Coach Nia Brooks leading a mobility session',
   general: 'Members training at Steadfast, a strength and conditioning club in Nashville',
 };
 const altFor = src => {
@@ -252,6 +260,7 @@ function buildPage({ src, path: urlPath }) {
 
   h = swapMedia(h);
   h = swapSvgs(h);
+  h = swapVideos(h);
 
   // colors used inline (style attributes, embeds)
   h = recolor(h);
@@ -280,6 +289,9 @@ function buildPage({ src, path: urlPath }) {
 
 const built = PAGES.map(buildPage);
 console.log('built', built.length, 'pages');
+write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${built.map(p => `  <url><loc>${SITE}${p === '/' ? '/' : p}</loc></url>`).join('\n')}\n</urlset>\n`);
+write('robots.txt', `User-agent: *\nAllow: /\nSitemap: ${SITE}/sitemap.xml\n`);
 if (missingMedia.size) console.warn('unmapped Paragon images:', [...missingMedia].join(' '));
+if (missingVideo.size) console.warn('unmapped Paragon videos:', [...missingVideo].join(' '));
 fs.writeFileSync(path.join(__dirname, 'untranslated.txt'), [...untranslated].sort((a, b) => b[1] - a[1]).map(([t, n]) => n + '\t' + t).join('\n'));
 console.log('untranslated text nodes:', untranslated.size, '(tools/untranslated.txt)');

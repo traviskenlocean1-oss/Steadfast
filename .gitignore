@@ -6,3 +6,4 @@ tools/untranslated.txt
 tools/text-inventory.json
 tools/text-by-page.txt
 tools/brand/_svgs.html
+.wrangler/
