@@ -1,0 +1,187 @@
+<!doctype html>
+<!-- Steadfast sticker + badge set. Each [data-out] element is one asset, drawn at the exact pixel size of the Paragon
+     asset it replaces, and rendered to a transparent PNG by tools/brand/make-stickers.js. -->
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:BC;src:url(../../assets/fonts/barlow-condensed-800.woff2)}
+@font-face{font-family:AN;src:url(../../assets/fonts/archivo-narrow-700.woff2)}
+@font-face{font-family:YT;src:url(../../assets/fonts/yellowtail.woff2)}
+@font-face{font-family:OX;src:url(../../assets/fonts/oxanium-800.woff2)}
+:root{--o:#e3492b;--m:#e9a93a;--lm:#f1cf86;--g:#2f5a4b;--c:#f4f1ea;--k:#100f0f}
+body{margin:0;background:transparent}
+[data-out]{position:relative;overflow:hidden}*{box-sizing:border-box}
+.abs{position:absolute}.ctr{display:flex;align-items:center;justify-content:center}
+.bc{font-family:BC;text-transform:uppercase;line-height:.86}.yt{font-family:YT;line-height:1}.ox{font-family:OX;text-transform:uppercase;line-height:1}.an{font-family:AN;text-transform:uppercase}
+.die{filter:drop-shadow(0 0 0 #000)}
+svg{display:block}
+</style></head><body>
+
+<!-- kettlebell silhouette, reused -->
+<svg width="0" height="0" style="position:absolute"><defs>
+  <symbol id="kb" viewBox="0 0 40 40"><path fill="currentColor" fill-rule="evenodd" d="M13 6.5C13 4 15 2.5 20 2.5S27 4 27 6.5V11.2C31.8 13.6 35 18.6 35 24.3 35 32.1 28.3 37.5 20 37.5S5 32.1 5 24.3C5 18.6 8.2 13.6 13 11.2ZM17 7.2V10A16 16 0 0 1 23 10V7.2C23 6.6 22 6.2 20 6.2S17 6.6 17 7.2Z"/></symbol>
+  <symbol id="kbs" viewBox="0 0 40 40"><path fill="currentColor" d="M13 6.5C13 4 15 2.5 20 2.5S27 4 27 6.5V11.2C31.8 13.6 35 18.6 35 24.3 35 32.1 28.3 37.5 20 37.5S5 32.1 5 24.3C5 18.6 8.2 13.6 13 11.2Z"/></symbol>
+  <symbol id="star" viewBox="0 0 40 40"><path fill="currentColor" d="M20 0C21.6 13 27 18.4 40 20 27 21.6 21.6 27 20 40 18.4 27 13 21.6 0 20 13 18.4 18.4 13 20 0Z"/></symbol>
+  <symbol id="plate" viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="currentColor"/><circle cx="50" cy="50" r="36" fill="none" stroke="var(--c)" stroke-width="3"/><circle cx="50" cy="50" r="9" fill="var(--c)"/><circle cx="50" cy="50" r="4.5" fill="currentColor"/></symbol>
+</defs></svg>
+
+<!-- sticky-card-05 (1664x1673): big kettlebell, script wordmark -->
+<div data-out="sticker-kettlebell" style="width:1664px;height:1673px">
+  <svg class="abs" style="left:52px;top:40px" width="1560" height="1590" viewBox="0 0 40 40"><use href="#kbs" color="#fff"/></svg>
+  <svg class="abs" style="left:112px;top:110px" width="1440" height="1470" viewBox="0 0 40 40"><use href="#kb" color="var(--k)"/></svg>
+  <div class="abs ctr yt" style="left:0;right:0;top:860px;font-size:330px;color:var(--c);transform:rotate(-6deg)">Steadfast</div>
+  <div class="abs ctr bc" style="left:0;right:0;top:1290px;font-size:150px;color:var(--o);letter-spacing:6px">Never skip</div>
+</div>
+
+<!-- sticky-card-02 (1111x1118): striped S monogram -->
+<div data-out="sticker-s-stripes" style="width:1111px;height:1118px">
+  <div class="abs" style="inset:30px;border-radius:220px;background:#fff"></div>
+  <div class="abs" style="inset:62px;border-radius:190px;background:var(--k)"></div>
+  <div class="abs ctr ox" style="inset:0;font-size:1020px;padding-top:40px;background:repeating-linear-gradient(90deg,var(--o) 0 70px,var(--k) 70px 100px,var(--m) 100px 170px,var(--k) 170px 200px);-webkit-background-clip:text;background-clip:text;color:transparent">S</div>
+</div>
+
+<!-- sticky-card-01 (1581x1407): oval club badge with barbell -->
+<div data-out="sticker-oval-barbell" style="width:1581px;height:1407px">
+  <div class="abs" style="left:40px;top:40px;right:40px;bottom:40px;border-radius:50%;background:#fff;border:14px solid var(--k)"></div>
+  <div class="abs" style="left:100px;top:100px;right:100px;bottom:100px;border-radius:50%;background:var(--o)"></div>
+  <div class="abs" style="left:330px;top:300px;right:330px;bottom:300px;border-radius:50%;background:var(--k)"></div>
+  <!-- barbell -->
+  <div class="abs" style="left:390px;right:390px;top:690px;height:34px;background:var(--c);border-radius:17px"></div>
+  <div class="abs" style="left:470px;top:560px;width:70px;height:290px;background:var(--c);border-radius:16px"></div>
+  <div class="abs" style="left:555px;top:600px;width:50px;height:210px;background:var(--c);border-radius:14px"></div>
+  <div class="abs" style="right:470px;top:560px;width:70px;height:290px;background:var(--c);border-radius:16px"></div>
+  <div class="abs" style="right:555px;top:600px;width:50px;height:210px;background:var(--c);border-radius:14px"></div>
+  <svg class="abs" style="inset:0" width="1581" height="1407" viewBox="0 0 1581 1407">
+    <defs><path id="ovt" d="M260,703 a530,470 0 0,1 1061,0"/><path id="ovb" d="M210,703 a580,520 0 0,0 1161,0"/></defs>
+    <text font-family="BC" font-size="170" fill="var(--k)" letter-spacing="14" text-anchor="middle"><textPath href="#ovt" startOffset="50%">STEADFAST</textPath></text>
+    <text font-family="BC" font-size="120" fill="var(--c)" letter-spacing="10" text-anchor="middle" dy="80"><textPath href="#ovb" startOffset="50%">SINCE 2026 · NASHVILLE</textPath></text>
+  </svg>
+</div>
+
+<!-- sticky-card-04 (1707x1342): split oval, plate in the middle -->
+<div data-out="sticker-oval-plate" style="width:1707px;height:1342px">
+  <div class="abs" style="left:40px;top:40px;right:40px;bottom:40px;border-radius:50%;background:#fff;border:14px solid var(--k)"></div>
+  <div class="abs" style="left:96px;top:96px;right:96px;bottom:96px;border-radius:50%;background:linear-gradient(180deg,var(--o) 50%,var(--m) 50%)"></div>
+  <svg class="abs" style="left:603px;top:421px" width="500" height="500"><use href="#plate" color="var(--k)"/></svg>
+  <div class="abs ctr ox" style="left:0;right:0;top:235px;font-size:160px;color:var(--k);letter-spacing:6px">STEADFAST</div>
+  <div class="abs ctr ox" style="left:0;right:0;top:960px;font-size:160px;color:#fff;letter-spacing:6px">STEADFAST</div>
+</div>
+
+<!-- sticky-card-03 (956x972): kettlebell-shaped badge -->
+<div data-out="sticker-kb-badge" style="width:956px;height:972px">
+  <svg class="abs" style="left:8px;top:0" width="940" height="972" viewBox="0 0 40 40" preserveAspectRatio="none"><use href="#kbs" color="#fff"/></svg>
+  <svg class="abs" style="left:48px;top:40px" width="860" height="892" viewBox="0 0 40 40" preserveAspectRatio="none"><use href="#kbs" color="var(--k)"/></svg>
+  <div class="abs" style="left:355px;top:150px;width:246px;height:120px;border-radius:60px 60px 0 0;background:#fff"></div>
+  <div class="abs ctr bc" style="left:150px;right:150px;top:330px;font-size:62px;color:#fff;text-align:center;line-height:.95">A strength &amp;<br>conditioning club</div>
+  <div class="abs yt" style="left:270px;top:450px;font-size:330px;color:#fff">S</div>
+  <svg class="abs" style="left:560px;top:600px;color:#fff" width="120" height="120"><use href="#star"/></svg>
+  <div class="abs ctr bc" style="left:0;right:0;top:720px;font-size:56px;color:#fff;letter-spacing:2px">Never skip a day</div>
+</div>
+
+<!-- contact-marquee-image-02 (1200x1200): orange square poster -->
+<div data-out="poster-no-days-off" style="width:1200px;height:1200px;background:var(--o)">
+  <div class="abs ctr an" style="left:0;right:0;top:60px;font-size:72px;color:var(--k)">Steadfast</div>
+  <div class="abs ctr bc" style="left:0;right:0;top:170px;font-size:380px;color:var(--k)">No</div>
+  <div class="abs ctr bc" style="left:0;right:0;top:470px;font-size:380px;color:var(--k);gap:60px"><svg width="90" height="90" style="color:var(--k)"><use href="#star"/></svg>Days<svg width="90" height="90" style="color:var(--k)"><use href="#star"/></svg></div>
+  <div class="abs ctr bc" style="left:0;right:0;top:770px;font-size:380px;color:var(--k)">Off</div>
+  <div class="abs ctr an" style="left:0;right:0;top:1070px;font-size:72px;color:var(--k)">Nashville</div>
+</div>
+
+<!-- contact-marquee-image-01 (1201x1156): green square with STDFST oval -->
+<div data-out="poster-stdfst" style="width:1201px;height:1156px;background:var(--g)">
+  <div class="abs ctr ox" style="left:150px;top:200px;width:900px;height:480px;border-radius:50%;background:var(--k);border:22px solid #fff;font-size:200px;color:#fff;letter-spacing:2px">STDFST</div>
+  <div class="abs ctr bc" style="left:0;right:0;top:760px;font-size:170px;color:#fff;font-style:italic;text-align:center;line-height:.9">Built not<br>bought</div>
+</div>
+
+<!-- work-cta-image (1206x1551): card with diagonal band -->
+<div data-out="card-kettlebell-band" style="width:1206px;height:1551px">
+  <div class="abs" style="inset:20px;border-radius:70px;background:#fff;border:12px solid var(--k)"></div>
+  <div class="abs" style="left:62px;top:62px;right:62px;bottom:62px;border-radius:44px;overflow:hidden;background:linear-gradient(180deg,var(--o) 50%,var(--g) 50%)">
+    <svg class="abs" style="left:300px;top:60px;color:var(--k)" width="520" height="560"><use href="#kb"/></svg>
+    <svg class="abs" style="left:300px;top:820px;color:var(--k);transform:scaleY(-1)" width="520" height="560"><use href="#kb"/></svg>
+  </div>
+  <div class="abs ctr ox" style="left:-160px;right:-160px;top:620px;height:250px;background:var(--k);border-top:14px solid #fff;border-bottom:14px solid #fff;transform:rotate(-24deg);font-size:190px;color:#fff;letter-spacing:6px">STEADFAST</div>
+</div>
+
+<!-- philosophy-logo (740x872): script S + star -->
+<div data-out="mark-script-s" style="width:740px;height:872px">
+  <div class="abs yt" style="left:90px;top:0;font-size:720px;color:var(--o);-webkit-text-stroke:34px #fff;paint-order:stroke fill;text-shadow:22px 22px 0 var(--m)">S</div>
+  <svg class="abs" style="left:470px;top:560px;color:var(--o);filter:drop-shadow(0 0 0 #fff) drop-shadow(12px 12px 0 var(--m))" width="230" height="230"><use href="#star"/></svg>
+</div>
+
+<!-- vision-image-01 (1307x1307): round coach badge -->
+<div data-out="badge-round-coach" style="width:1307px;height:1307px">
+  <div class="abs" style="inset:30px;border-radius:50%;background:#fff;border:14px solid var(--k)"></div>
+  <div class="abs" style="inset:86px;border-radius:50%;background:var(--o)"></div>
+  <div class="abs" style="inset:330px;border-radius:50%;background:var(--m);border:14px solid var(--k)"></div>
+  <svg class="abs" style="left:478px;top:390px;color:var(--k)" width="350" height="350"><use href="#kb"/></svg>
+  <div class="abs ctr bc" style="left:395px;width:517px;top:700px;height:150px;background:var(--k);color:#fff;font-size:130px;transform:rotate(-8deg)">Coach</div>
+  <svg class="abs" style="inset:0" width="1307" height="1307" viewBox="0 0 1307 1307">
+    <defs><path id="rc" d="M653,653 m-460,0 a460,460 0 1,1 920,0 a460,460 0 1,1 -920,0"/></defs>
+    <text font-family="BC" font-size="150" fill="var(--k)" letter-spacing="12"><textPath href="#rc" startOffset="2%">STEADFAST ✦ STRONG SINCE 2026 ✦</textPath></text>
+  </svg>
+</div>
+
+<!-- vision-image-03 (1130x944): STDFST oval -->
+<div data-out="badge-stdfst" style="width:1130px;height:944px">
+  <div class="abs ctr ox" style="left:20px;top:20px;width:1090px;height:540px;border-radius:50%;background:var(--k);border:26px solid #fff;outline:12px solid var(--k);outline-offset:-2px;font-size:240px;color:#fff;letter-spacing:2px">STDFST</div>
+  <div class="abs ctr bc" style="left:0;right:0;top:600px;font-size:160px;color:var(--k);font-style:italic;text-align:center;line-height:.9;-webkit-text-stroke:24px #fff;paint-order:stroke fill">Built not<br>bought</div>
+</div>
+
+<!-- a.avif (1350x1352): framed plate sticker -->
+<div data-out="sticker-plate-crew" style="width:1350px;height:1352px">
+  <div class="abs" style="left:60px;top:60px;right:60px;bottom:60px;border-radius:90px;background:#fff;transform:rotate(-4deg)"></div>
+  <div class="abs" style="left:100px;top:100px;right:100px;bottom:100px;border-radius:64px;background:var(--k);transform:rotate(-4deg)">
+    <div class="abs" style="left:150px;top:90px;right:80px;bottom:260px;border-radius:40px;background:var(--o);padding:40px">
+      <div style="width:100%;height:100%;border-radius:24px;background:var(--m)" class="ctr"><svg width="560" height="560" style="color:var(--k)"><use href="#plate"/></svg></div>
+    </div>
+    <div class="abs bc" style="left:16px;top:400px;font-size:110px;color:#fff;transform:rotate(-90deg);transform-origin:left top;white-space:nowrap;top:760px">Coach crew</div>
+    <div class="abs" style="left:150px;right:80px;bottom:110px;height:90px;border-radius:20px;background:var(--o)"></div>
+    <div class="abs an" style="right:110px;bottom:130px;font-size:52px;color:var(--k)">Steadfast</div>
+  </div>
+</div>
+
+<!-- jacket front with badges (1024x1024): crewneck with club patches -->
+<div data-out="merch-crewneck" style="width:1024px;height:1024px">
+  <svg class="abs" style="inset:0" width="1024" height="1024" viewBox="0 0 1024 1024">
+    <path fill="var(--k)" d="M372 96C412 128 460 142 512 142S612 128 652 96L812 152C880 176 916 222 936 286L1004 560 882 598 832 420 832 940C832 958 818 972 800 972H224C206 972 192 958 192 940V420L142 598 20 560 88 286C108 222 144 176 212 152Z"/>
+    <path fill="none" stroke="#2a2828" stroke-width="10" d="M372 96C412 128 460 142 512 142S612 128 652 96M192 900H832M88 560L20 560"/>
+  </svg>
+  <div class="abs yt" style="left:300px;top:310px;font-size:118px;color:var(--c);transform:rotate(-6deg)">Steadfast</div>
+  <div class="abs ctr bc" style="left:0;right:0;top:470px;font-size:34px;color:var(--o);letter-spacing:3px">Strength &amp; conditioning club</div>
+  <svg class="abs" style="left:96px;top:330px;color:var(--o)" width="90" height="90"><use href="#kb"/></svg>
+  <div class="abs ctr ox" style="left:850px;top:400px;width:100px;height:64px;background:var(--m);color:var(--k);font-size:34px;transform:rotate(14deg)">STDF</div>
+  <div class="abs ctr bc" style="left:426px;top:800px;width:172px;height:50px;border:5px solid var(--c);border-radius:25px;color:var(--c);font-size:34px">Est. 2026</div>
+</div>
+
+<!-- P_icon (128x128): script S + star on black -->
+<div data-out="icon-s" style="width:128px;height:128px;background:var(--k)">
+  <div class="abs yt" style="left:30px;top:8px;font-size:92px;color:#fff">S</div>
+  <svg class="abs" style="left:78px;top:76px;color:#fff" width="26" height="26"><use href="#star"/></svg>
+</div>
+
+<!-- P_sticker (784x1232): striped S, upright -->
+<div data-out="sticker-s-tall" style="width:784px;height:1232px">
+  <div class="abs" style="left:52px;top:240px;width:680px;height:690px;border-radius:150px;background:#fff;transform:rotate(-8deg)"></div>
+  <div class="abs" style="left:76px;top:264px;width:632px;height:642px;border-radius:130px;background:var(--k);transform:rotate(-8deg)"></div>
+  <div class="abs ctr ox" style="left:52px;top:240px;width:680px;height:690px;font-size:640px;padding-top:30px;transform:rotate(-8deg);background:repeating-linear-gradient(90deg,var(--o) 0 46px,var(--k) 46px 64px,var(--m) 64px 110px,var(--k) 110px 128px);-webkit-background-clip:text;background-clip:text;color:transparent">S</div>
+</div>
+
+<!-- Horse_sticker (784x1232): kettlebell with slogan -->
+<div data-out="sticker-kb-tall" style="width:784px;height:1232px">
+  <svg class="abs" style="left:52px;top:230px;transform:rotate(-10deg)" width="680" height="700" viewBox="0 0 40 40"><use href="#kbs" color="#fff"/></svg>
+  <svg class="abs" style="left:82px;top:260px;transform:rotate(-10deg)" width="620" height="640" viewBox="0 0 40 40"><use href="#kb" color="var(--k)"/></svg>
+  <div class="abs ctr bc" style="left:150px;width:484px;top:610px;font-size:96px;color:#fff;text-align:center;line-height:.9;transform:rotate(-10deg)">Always<br>steady</div>
+</div>
+
+<!-- favicon (32x32) + webclip (256x256) -->
+<div data-out="favicon" style="width:32px;height:32px;background:var(--o)"><svg class="abs" style="left:3px;top:3px;color:var(--k)" width="26" height="26"><use href="#kb"/></svg></div>
+<div data-out="webclip" style="width:256px;height:256px;background:var(--o)"><svg class="abs" style="left:38px;top:34px;color:var(--k)" width="180" height="180"><use href="#kb"/></svg></div>
+
+<!-- Open Graph (1200x630) -->
+<div data-out="og" style="width:1200px;height:630px;background:var(--k)">
+  <div class="abs" style="left:110px;top:150px;width:980px;height:330px;border:14px solid var(--c);border-radius:165px"></div>
+  <div class="abs bc" style="right:170px;top:190px;font-size:40px;color:var(--c);text-align:right;line-height:.95">Strength &amp;<br>conditioning<br>club</div>
+  <div class="abs yt" style="left:160px;top:260px;font-size:180px;color:var(--c);transform:rotate(-6deg)">Steadfast</div>
+  <div class="abs ctr an" style="left:0;right:0;top:540px;font-size:28px;color:var(--o);letter-spacing:3px">Nashville, TN</div>
+</div>
+</body></html>

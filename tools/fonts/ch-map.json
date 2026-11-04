@@ -1,0 +1,38 @@
+{
+ "zero": {
+  "Review Condensed": 0.5489999389648438,
+  "Simplon Norm": 0.5579998779296875,
+  "Roobert": 0.6319999694824219,
+  "Proxima Nova": 0.6119999694824219
+ },
+ "map": {
+  ".contact-hero_subtitle_contact_label": 0.632,
+  ".director-bio_subheading_wrap": 0.632,
+  ".director-cta_heading": 0.549,
+  ".director-hero_heading": 0.549,
+  ".director-bio_grid_heading": 0.558,
+  ".u-max-width-14ch": 0.549,
+  ".u-max-width-40ch": 0.558,
+  ".home-pilars_card_subheading": 0.632,
+  ".home-news_card_heading": 0.549,
+  ".featured-work_card_heading": 0.549,
+  ".home-services_title_heading": 0.632,
+  ".home-gallery_heading": 0.549,
+  ".blog-template-hero_heading": 0.549,
+  ".creative_partnership_subheading": 0.632,
+  ".about-hero_heading": 0.549,
+  ".about-hero_paragraph": 0.632,
+  ".about-statement_heading": 0.558,
+  ".home-pilars_subheading": 0.632,
+  ".home-pilars_headng": 0.549,
+  ".creative_philosophy_heading": 0.549,
+  ".creative_philosophy_subheading": 0.632,
+  ".creative_drive_heading": 0.632,
+  ".creative_view-point_heading": 0.549,
+  ".creative_vision_heading": 0.632,
+  ".creative_integrity_subheading": 0.632,
+  ".u-max-width-30ch": 0.632,
+  ".behind-scene_credits_list_rich-text li": 0.558,
+  ".works-hero_subheading": 0.632
+ }
+}

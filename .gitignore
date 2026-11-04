@@ -1,0 +1,8 @@
+tools/ref-media/
+tools/src/
+node_modules/
+tools/stock/
+tools/untranslated.txt
+tools/text-inventory.json
+tools/text-by-page.txt
+tools/brand/_svgs.html

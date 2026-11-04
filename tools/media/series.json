@@ -1,0 +1,15 @@
+{
+  "_note": "Stock stills grouped into shoots (tools/stock/posters/vNNN.jpg = Pexels video poster, pNNN = Pexels photo). One shoot per program so each program page reads as one session.",
+  "barbell-club": ["v031", "v093", "v100", "v103", "v114", "v116", "v117", "v129", "v131", "v143", "v148", "v156", "v157", "v159", "v160", "v161", "v171", "v173", "v194", "v198", "v210", "v218", "v221", "v223", "v235", "v242", "v244", "v246", "v250", "v258", "v262"],
+  "team-conditioning": ["v044", "v045", "v057", "v075", "v086", "v108", "v120", "v167", "v187", "v188", "v211", "v216", "v219", "v261"],
+  "athlete-performance": ["v040", "v043", "v047", "v125", "v126", "v151", "v165", "v177", "v185"],
+  "5am-club": ["v069", "v070", "v072", "v101", "v102", "v104", "v109", "v127", "v128", "v152", "v158", "v162", "v166", "v192", "v202", "v203", "v220", "v228", "v243", "v263", "v264"],
+  "mobility-recovery": ["v049", "v064", "v074", "v083", "v097", "v106", "v124", "v155", "v163", "v178", "v179", "v186", "v199", "v201", "v231", "v247", "v254"],
+  "strength-foundations": ["v014", "v015", "v016", "v019", "v024", "v025", "v076", "v119", "v136", "v154", "v172", "v182", "v212", "v225", "v232", "v240", "v245"],
+  "engine-builder": ["v048", "v081", "v118", "v133", "v146", "v153", "v205", "v224", "v229", "v248"],
+  "lift-for-life": ["v005", "v007", "v008", "v032", "v089", "v096", "v113", "v195", "v196", "v252", "v253", "p005", "p011", "p014", "p017", "p019"],
+  "coach:marcus-hale": ["v018", "v030", "v020", "v017"],
+  "coach:dre-collins": ["v111", "v164", "v110", "v112"],
+  "coach:sam-kessler": ["v066", "v067", "v065", "v068"],
+  "coach:nia-brooks": ["v186", "v083", "v097", "v124", "v163", "v178", "v199"]
+}
